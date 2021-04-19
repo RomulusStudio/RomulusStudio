@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Sunday School</title>
+    <link href="https://api.fontshare.com/css?f[]=general-sans@400,700&f[]=zodiak@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header id="header-block">
+        <h1>Red Sunday School</h1>
+    </header>
+    <main>
+        <section class="archive" id="archive-block">
+            <figure>
+             <img src="assets/badge.png" alt="">
+             <figcaption>Badge</figcaption> 
+            </figure>
+            <figure>
+            <img src="assets/prole-cat.jpg" alt="">
+            <figcaption>Badge</figcaption> 
+            </figure>
+            <figure>
+            <img src="assets/sf.png" alt="">
+            <figcaption>Badge</figcaption> 
+            </figure>
+            <figure>
+            <img src="assets/socialistprecepts-spread.jpg" alt="">
+            <figcaption>Badge</figcaption> 
+            </figure>
+            <figure>
+            <img src="assets/ssscommandments.jpg" alt="">
+            <figcaption>Badge</figcaption> 
+            </figure>
+            <figure>
+            <img src="assets/ys1905.jpg" alt="">
+            <figcaption>Badge</figcaption> 
+            </figure>
+            <figure>
+            <img src="assets/ys1970.jpg" alt="">
+            <figcaption>Badge</figcaption> 
+            </figure>
+    
+        </section>
+        <section class="text" id="text-block">
+            <div class="inner">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, vero. Iusto quis voluptas vel reprehenderit, aut consequuntur quibusdam aspernatur in.</p>
+                <h2>Precepts</h2>
+                <ol>
+                    <li>Be friendly to your school fellows remembering that they will be your fellow workers in life.</li>
+                    <li>Love learning which is the food of the mind.</li>
+                    <li>Make every day worth while by good and useful deeds and kindly actions.</li>
+                    <li>Honour the good, be courteous to all, bow down to none.</li>
+                    <li>Do not hate or speak evil of anyone. Do not be revengeful, but stand up for you rights and resist oppression.</li>
+                    <li>Do not be cowardly. Be a friend to the weak and love justice.</li>
+                </ol>
+                <div class="form">
+                <h2>Get Involved</h2>
+                <form action="">
+                    <input type="text" name="name" placeholder="Name" id="">
+                    <input type="email" name="email" placeholder="Email" id="">
+                </form>
+            </div>
+            </div>
+            
+            
+
+        </section>
+        <button class="close-btn" id="close-text-block">Show Archive</button>
+    </main>
+    <footer>
+        
+    </footer>
+    <script>
+        const textBlock = document.getElementById('text-block');
+        const archiveBlock = document.getElementById('archive-block');
+        const header = document.getElementById('header-block');
+        const textBlockClose = document.getElementById('close-text-block');
+
+       
+
+        textBlockClose.addEventListener('click', closeInfo)
+        function closeInfo() {
+            textBlock.classList.toggle('hidden');
+            archiveBlock.classList.toggle('inview');
+            this.classList.toggle('active');
+            header.classList.toggle('small');
+        } 
+    </script>
+</body>
+</html>
