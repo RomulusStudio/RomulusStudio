@@ -1,3 +1,19 @@
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+
 $rss-red:  #f44336;
 body {
     font-family: 'zodiak';
@@ -24,6 +40,10 @@ header, footer {
         margin: 0;
         color: white;
         font-size: calc(6rem + 2vmax);
+        @include for-phone-only {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
     }
     &.small {
         transform: scale(.4) translateY(-100px);
@@ -49,6 +69,11 @@ main {
         background-color: white;
         color: $rss-red;
         overflow: hidden;
+        @include for-phone-only {
+            font-size: .8rem;
+            padding: 1rem;
+            left: 1rem;
+        }
         &:focus {
             outline: none;
         }
@@ -90,17 +115,28 @@ main {
             z-index: 5000;
             transition: .4s ease;
             display: flex;
+            @include for-phone-only {
+                overflow: auto;
+                
+            }
             .inner {
                 margin: auto;
                 padding: 2rem;
                 background-color: white;
                 color: $rss-red;
+                @include for-phone-only() {
+                    padding: .4rem;
+                }
                 ol {
                     width: 100%;
                     max-width: 1000px;
                     padding: 0;
                     columns: 2;
                     gap: 2rem;
+                    @include for-phone-only {
+                        max-width: 100%;
+                        columns: 1;
+                    }
                     li {
                         margin: 0 0 1em;
                         padding: 0;
@@ -127,6 +163,9 @@ main {
                     font-size: 1.4rem;
                     border-bottom: 1px solid $rss-red;
                 }
+                @include for-phone-only {
+                    flex-flow: column;
+                }
             }
             h2 {
                 font-weight: 300;
@@ -135,7 +174,7 @@ main {
                 padding-top: 1rem;
             }
             &.hidden {
-                transform: translateY(100vw);
+                transform: translateY(100vh);
             }
             
         }
@@ -147,6 +186,11 @@ main {
             padding: 5rem;
             opacity: .4;
             transition: .4s ease;
+            @include for-phone-only {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 1rem;
+            }
             img {
                 filter: grayscale(1);
                 mix-blend-mode: multiply;
