@@ -51,6 +51,13 @@ header.small h1, footer.small h1 {
   color: #f44336;
 }
 
+@media (max-width: 599px) {
+  header.small, footer.small {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
 main {
   font-size: calc(1rem + .4vmax);
   display: -webkit-box;
@@ -59,6 +66,12 @@ main {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
+}
+
+@media (max-width: 599px) {
+  main {
+    font-size: 1rem;
+  }
 }
 
 main .close-btn {
@@ -78,8 +91,12 @@ main .close-btn {
 @media (max-width: 599px) {
   main .close-btn {
     font-size: .8rem;
-    padding: 1rem;
+    padding: .4rem;
     left: 1rem;
+    right: 1rem;
+    bottom: .5rem;
+    border-radius: .2rem;
+    width: calc(100% - 2rem);
   }
 }
 
@@ -140,6 +157,8 @@ main section.text {
 @media (max-width: 599px) {
   main section.text {
     overflow: auto;
+    top: 3rem;
+    bottom: 3rem;
   }
 }
 
@@ -245,7 +264,7 @@ main section.archive {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     gap: 0;
-    padding: 1rem;
+    padding: 4rem 1rem;
   }
 }
 

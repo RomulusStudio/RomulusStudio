@@ -50,6 +50,9 @@ header, footer {
         h1 {
             color: $rss-red;
         }
+        @include for-phone-only {
+            transform: scale(.8);
+        }
     }
 }
 
@@ -57,6 +60,9 @@ main {
     font-size: calc(1rem + .4vmax);
     display: flex;
     flex: 4;
+    @include for-phone-only {
+        font-size: 1rem;
+    }
     .close-btn {
         font-family: 'General Sans';
         font-size: 2rem;
@@ -71,8 +77,12 @@ main {
         overflow: hidden;
         @include for-phone-only {
             font-size: .8rem;
-            padding: 1rem;
+            padding: .4rem;
             left: 1rem;
+            right: 1rem;
+            bottom: .5rem;
+            border-radius: .2rem;
+            width: calc(100% - 2rem);
         }
         &:focus {
             outline: none;
@@ -117,7 +127,8 @@ main {
             display: flex;
             @include for-phone-only {
                 overflow: auto;
-                
+                top: 3rem;
+                bottom: 3rem;
             }
             .inner {
                 margin: auto;
@@ -189,7 +200,7 @@ main {
             @include for-phone-only {
                 grid-template-columns: 1fr;
                 gap: 0;
-                padding: 1rem;
+                padding: 4rem 1rem;
             }
             img {
                 filter: grayscale(1);
