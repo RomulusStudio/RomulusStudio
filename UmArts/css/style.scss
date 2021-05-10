@@ -1,0 +1,136 @@
+$medium-spring-green: #74fcadff;
+$mantis: #74cf75ff;
+$medium-aquamarine: #7adeaeff;
+$illuminating-emerald: #239672ff;
+$green-sheen: #80ab98ff;
+$cadmium-orange: #e68020ff;
+$yellow-munsell: #eac800ff;
+$liberty: #4b60b3ff;
+$medium-slate-blue: #7e5ae8ff;
+
+@mixin standardpad {
+    padding: 1rem 2rem;
+}
+body {
+    font-family: 'General Sans';
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    margin: 0;
+}
+
+header {
+    @include standardpad;
+    background-color: black;
+    color: white;
+    h1, h2 {
+        font-size: 1rem;
+    }
+}
+img, video {    
+    width: 80%;
+    margin: 4rem 0;
+    &.small {
+        width: 200px;
+    }
+}
+
+p {
+    max-width: 600px;
+    margin: 0;
+    text-align: justify;
+    &+p {
+        text-indent: 1rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid;
+    &:visited {
+        color: black;
+        &:hover {
+            color: blue;
+        }
+    }
+}
+
+main {
+    section {
+        @include standardpad();
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        margin-bottom: 4rem;
+        min-height: 80vh;
+        .links {
+            grid-column: 2/4;
+            a {
+                display: block;
+            }
+        }
+    }
+}
+
+.colour-grid {
+    display: grid;
+    grid-column: 1/4;
+    grid-row: 2/9;
+    grid-template-columns: repeat(2, 1fr);
+  
+    .colour {
+        height: auto;
+        display: flex;
+        font-size: 2rem;
+        align-items: center;
+        span {
+            text-transform: capitalize;
+            flex: 1;
+            text-align: center;
+            &.white {
+                color: white;
+            }
+        }
+      
+        &:nth-child(1) {
+            background-color: $mantis;
+        }
+        &:nth-child(2) {
+            background-color: $medium-aquamarine;
+        }
+        &:nth-child(3) {
+            background-color: $illuminating-emerald;
+        }
+        &:nth-child(4) {
+            background-color: $green-sheen;
+        }
+        &:nth-child(6) {
+            background-color: $cadmium-orange;
+        }
+        &:nth-child(7) {
+            background-color: $yellow-munsell;
+        }
+        &:nth-child(8) {
+            background-color: $liberty;
+        }
+        &:nth-child(9) {
+            background-color: $medium-slate-blue;
+        }
+        
+    }
+    .gradient {
+        grid-column: 1/3;
+        &.blues {
+            background: linear-gradient(90deg, $liberty, $medium-slate-blue, $cadmium-orange,$yellow-munsell);
+        }
+        &.greens {
+            background: linear-gradient(90deg, $green-sheen, $illuminating-emerald, $medium-aquamarine );
+        }
+        
+    }
+}
