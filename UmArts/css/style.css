@@ -2,6 +2,7 @@ body {
   font-family: 'General Sans';
   margin: 0;
   padding: 0;
+  line-height: 1.4rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,6 +16,12 @@ header {
   color: white;
 }
 
+@media (max-width: 599px) {
+  header {
+    padding: 1rem;
+  }
+}
+
 header h1, header h2 {
   font-size: 1rem;
 }
@@ -24,8 +31,11 @@ img, video {
   margin: 4rem 0;
 }
 
-img.small, video.small {
-  width: 200px;
+@media (max-width: 599px) {
+  img, video {
+    width: 100%;
+    margin: 2rem 0;
+  }
 }
 
 p {
@@ -36,6 +46,11 @@ p {
 
 p + p {
   text-indent: 1rem;
+}
+
+p .tag {
+  padding: .1rem;
+  background-color: #eac800ff;
 }
 
 a {
@@ -56,17 +71,24 @@ main section {
   padding: 1rem 2rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
   gap: 2rem;
   margin-bottom: 4rem;
   min-height: 80vh;
 }
 
-main section .links {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-column: 2/4;
+@media (max-width: 599px) {
+  main section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 599px) {
+  main section {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 main section .links a {
@@ -91,7 +113,7 @@ main section .links a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 2rem;
+  font-size: calc(1rem + 1vmax);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

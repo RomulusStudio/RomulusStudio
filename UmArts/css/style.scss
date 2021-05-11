@@ -8,19 +8,28 @@ $yellow-munsell: #eac800ff;
 $liberty: #4b60b3ff;
 $medium-slate-blue: #7e5ae8ff;
 
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+
 @mixin standardpad {
     padding: 1rem 2rem;
+    @include for-phone-only {
+        padding: 1rem;
+    }
 }
 body {
     font-family: 'General Sans';
     margin: 0;
     padding: 0;
+    line-height: 1.4rem;
 }
 
 h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
     margin: 0;
 }
+
 
 header {
     @include standardpad;
@@ -33,17 +42,24 @@ header {
 img, video {    
     width: 80%;
     margin: 4rem 0;
-    &.small {
-        width: 200px;
+    @include for-phone-only() {
+        width: 100%;
+        margin: 2rem 0;
     }
 }
 
 p {
     max-width: 600px;
+    
     margin: 0;
     text-align: justify;
     &+p {
         text-indent: 1rem;
+    }
+    .tag {
+
+        padding: .1rem;
+        background-color: $yellow-munsell;
     }
 }
 
@@ -63,13 +79,16 @@ main {
     section {
         @include standardpad();
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 2fr;
         gap: 2rem;
 
         margin-bottom: 4rem;
         min-height: 80vh;
+        @include for-phone-only() {
+            grid-template-columns: 1fr;
+        }
         .links {
-            grid-column: 2/4;
+            
             a {
                 display: block;
             }
@@ -86,8 +105,9 @@ main {
     .colour {
         height: auto;
         display: flex;
-        font-size: 2rem;
+        font-size: calc(1rem + 1vmax);
         align-items: center;
+
         span {
             text-transform: capitalize;
             flex: 1;
