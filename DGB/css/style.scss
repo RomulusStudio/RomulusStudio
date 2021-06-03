@@ -236,3 +236,11 @@ figure {
         background-color: $dark-slate-gray;
     }
 }
+
+.instagram {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    h2 {
+        grid-column: span 2;
+    }
+}

@@ -292,4 +292,15 @@ figure img {
   color: white;
   background-color: #395b50;
 }
+
+.instagram {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.instagram h2 {
+  grid-column: span 2;
+}
 /*# sourceMappingURL=style.css.map */
