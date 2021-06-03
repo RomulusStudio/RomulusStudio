@@ -300,6 +300,13 @@ figure img {
       grid-template-columns: repeat(2, 1fr);
 }
 
+@media (max-width: 599px) {
+  .instagram {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .instagram h2 {
   grid-column: span 2;
 }
