@@ -1,0 +1,92 @@
+
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+
+@mixin standardpad {
+    padding: 1rem 2rem;
+    @include for-phone-only {
+        padding: 1rem;
+    }
+}
+body {
+    font-family: 'General Sans';
+    margin: 0;
+    padding: 0;
+    line-height: 1.4rem;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    margin: 0;
+}
+
+
+header {
+    @include standardpad;
+    background-color: black;
+    color: white;
+    h1, h2 {
+        font-size: 1rem;
+    }
+}
+img, video {    
+    width: 80%;
+    margin: 4rem 0;
+    @include for-phone-only() {
+        width: 100%;
+        margin: 2rem 0;
+    }
+}
+
+p {
+    max-width: 600px;
+    
+    margin: 0;
+    text-align: justify;
+    &+p {
+        text-indent: 1rem;
+    }
+    .tag {
+
+        padding: .1rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid;
+    &:visited {
+        color: black;
+        &:hover {
+            color: blue;
+        }
+    }
+}
+
+main {
+    section {
+        @include standardpad();
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+
+        margin-bottom: 4rem;
+        min-height: 80vh;
+        @include for-phone-only() {
+            grid-template-columns: 1fr;
+        }
+        .links {
+            
+            a {
+                display: block;
+            }
+        }
+        &.website {
+            h3 {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
